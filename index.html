@@ -22,6 +22,15 @@
     <title>Studio</title>
   </head>
   <body>
+    <div data-modal class="modal is-hidden">
+      <div class="modal-background">
+        <button data-modal-close class="modal-button">
+          <svg class="close-icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
     <!-- HEADER -->
     <header class="header">
       <div class="container container-header">
@@ -62,7 +71,9 @@
           <h1 class="title">
             Effective Solutions <br class="title" />for Your Business
           </h1>
-          <button class="button-title" type="button">Order Service</button>
+          <button data-modal-open class="button-title" type="button">
+            Order Service
+          </button>
         </div>
       </section>
       <!-- The 4 features  SECTION2-->
@@ -426,5 +437,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
