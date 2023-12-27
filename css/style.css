@@ -47,13 +47,22 @@ ul {
   padding-left: 516px;
   padding-right: 516px;
   width: 100%;
-  height: 677px;
+  height: 100%;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #2e2f4266;
   position: fixed;
 }
 
 .close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.close-icon:hover,
+.close-icon:focus {
+  fill: #ffffff;
+}
+
 .is-hidden {
   visibility: hidden;
   opacity: 0;
@@ -61,14 +70,41 @@ ul {
 }
 .modal-background {
   width: 408px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  min-height: 584px;
   height: 584px;
   border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--modal-color);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
 
 .modal-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  margin: 1px solid rgba(0, 0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-colour 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  background-color: #404bbf;
+  border: none;
 }
 /* HEADER */
 .header {
@@ -91,6 +127,8 @@ ul {
 .header-buttons-active::after {
   content: "";
   display: block;
+  position: absolute;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   background-color: var(--ocean-color);
@@ -100,6 +138,7 @@ ul {
 }
 .header-buttons {
   color: #2e2f42;
+  position: relative;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
@@ -108,6 +147,7 @@ ul {
   display: inline-block;
   padding: 24px 0;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* LOGO HEADER */
 .logo-nav {
@@ -152,6 +192,7 @@ ul {
 }
 .contacts-address {
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -159,6 +200,7 @@ ul {
   text-decoration: none;
 }
 .link {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0, 0.2, 1);
   padding: 24px 0 24px;
   text-decoration: none;
   display: block;
@@ -166,6 +208,8 @@ ul {
 .link:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0%);
+  transform: translateY(0%);
 }
 .link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -208,6 +252,7 @@ ul {
 
 .button-title {
   color: #fff;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   background: var(--buttons-color);
   font-family: Roboto, sans-serif;
@@ -302,6 +347,7 @@ ul {
   list-style: none;
   justify-content: center;
   margin-top: 8px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icons-list-footer {
@@ -322,6 +368,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icons-link-footer:hover,
@@ -467,6 +514,8 @@ ul {
   align-items: center;
   justify-content: center;
   color: var(--icons-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icons-link-customers:hover,
@@ -544,6 +593,10 @@ ul {
 .buttons {
   color: var(--buttons-color);
   background-color: #f4f4fd;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0, 0.2, 1);
   font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -566,17 +619,25 @@ ul {
 
 /* IMAGES SECTION 1 */
 
-.transitions {
-  background: var(--buttons-color);
-}
-.transitions :hover,
-.transitions :focus {
-  transition-property: background-color;
-  background: var(--buttons-color);
-  transition-delay: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.container-img {
+  position: relative;
+  overflow: hidden;
 }
 
+.description-img {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--background-color-button);
+  padding: 40px 32px;
+  background-color: #4d5ae5;
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0, 0.2, 1);
+}
 .images-port {
   display: flex;
   flex-wrap: wrap;
