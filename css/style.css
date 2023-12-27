@@ -52,13 +52,16 @@ ul {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #2e2f4266;
   position: fixed;
+  top: 0;
 }
 
 .close-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-icon:hover,
+.close-icon:hover {
+  fill: #ffffff;
+}
 .close-icon:focus {
   fill: #ffffff;
 }
@@ -101,7 +104,10 @@ ul {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover,
+.modal-button:hover {
+  background-color: #404bbf;
+  border: none;
+}
 .modal-button:focus {
   background-color: #404bbf;
   border: none;
@@ -126,8 +132,8 @@ ul {
 
 .header-buttons-active::after {
   content: "";
-  display: block;
   position: absolute;
+  display: block;
   bottom: -1px;
   width: 100%;
   height: 4px;
@@ -137,7 +143,7 @@ ul {
   border-radius: 2px;
 }
 .header-buttons {
-  color: #2e2f42;
+  color: #404bbf;
   position: relative;
   font-size: 16px;
   line-height: 1.5;
@@ -206,10 +212,10 @@ ul {
   display: block;
 }
 .link:hover {
+  transform: translateY(0%);
+  transform: translateY(0%);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transform: translateY(0%);
-  transform: translateY(0%);
 }
 .link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -252,7 +258,7 @@ ul {
 
 .button-title {
   color: #fff;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   background: var(--buttons-color);
   font-family: Roboto, sans-serif;
@@ -383,6 +389,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icons-link:hover,
