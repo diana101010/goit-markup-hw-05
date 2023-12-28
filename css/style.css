@@ -84,6 +84,7 @@ ul {
   height: 24px;
   top: 24px;
   right: 24px;
+  padding: 0;
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
